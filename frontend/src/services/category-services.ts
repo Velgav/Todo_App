@@ -1,16 +1,18 @@
 import { CategoryFormData } from "../components/AddCategoryBox/schema";
+import { Task } from "../types/task";
 
 const baseURL = import.meta.env.VITE_APP_API_BASE_URL;
 
 export interface CategoryResponse {
   id: number;
-  title: string;
+  //title: string;
   name: string;
-  content: string;
+  //content: string;
   createdAt: string;
   updatedAt: string;
-  category: string;
-}
+  //category: string;
+  tasks: Task[];
+ }
 
 export const getAllCategories = async () => {
   const response = await fetch(baseURL + "/categories");

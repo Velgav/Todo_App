@@ -21,7 +21,18 @@ const TodoPage = () => {
     const handleGetAllTasks = () => {
         getAllTasks()
             .then(data => {
-                const sortedTasks = data.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
+                const sortedTasks = data.sort((a, b) => {const dateA = new Date(a.updatedAt);
+                    const dateB = new Date(b.updatedAt);
+
+                    // Handle invalid dates
+                    if (isNaN(dateA.getTime()) || isNaN(dateB.getTime())) {
+                        throw new Error('Invalid date format');
+                    }
+
+                    return dateB.getTime() - dateA.getTime(); // Sort in descending order
+                });
+                    //new Date(b.updatedAt) - new Date(a.updatedAt)
+                
                 setTasks(sortedTasks);
             })
             .catch(e => console.log(e));
@@ -35,10 +46,21 @@ const TodoPage = () => {
     }
 
     //  GET TASKS BY CATEGORY ID
-    const handleGetTasksByCategoryId = (catId) => {
+    const handleGetTasksByCategoryId = (catId: number) => {
         getTasksByCategoryId(catId)
             .then(data => {
-                const sortedTasks = data.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
+                const sortedTasks = data.sort((a, b) => {
+                    const dateA = new Date(a.updatedAt);
+                    const dateB = new Date(b.updatedAt);
+
+                    // Handle invalid dates
+                    if (isNaN(dateA.getTime()) || isNaN(dateB.getTime())) {
+                        throw new Error('Invalid date format');
+                    }
+
+                    return dateB.getTime() - dateA.getTime(); // Sort in descending order
+                });
+                    //new Date(b.updatedAt) - new Date(a.updatedAt));
                 setTasks(sortedTasks);
             })
             .catch(e => console.log(e));
@@ -54,7 +76,7 @@ const TodoPage = () => {
     }
 
     //  DUPLICATE TASK
-    const handleDuplicateTask = (id) => {
+    const handleDuplicateTask = (id: number) => {
         duplicateTask(id)
             .then(data => {
                 setTasks(prev => ([data, ...prev]));
@@ -63,7 +85,7 @@ const TodoPage = () => {
     }
 
     //  DELETE CATEGORY
-    const handleDeleteCategory = (id) => {
+    const handleDeleteCategory = (id:number) => {
         deleteCategory(id)
             .then(() => {
                 const allCategories = [...categories];
@@ -74,7 +96,7 @@ const TodoPage = () => {
     }
 
     //  UPDATE CATEGORY
-    const handleUpdateCategory = (id, data: CategoryFormData) => {
+    const handleUpdateCategory = (id: number, data: CategoryFormData) => {
         updateCategory(id, data)
             .then((data) => {
                 const allCategories = [...categories];
@@ -85,7 +107,7 @@ const TodoPage = () => {
             .catch(e => console.log('error creating category', e));
     }
 
-    const handleSelectCategory = (category) => {
+    const handleSelectCategory = (category: any) => {
         setSelectedCategory(category);
         if (category === undefined) {
             handleGetAllTasks();
@@ -104,7 +126,7 @@ const TodoPage = () => {
             .catch(e => console.log('error creating category', e));
     }
 
-    const handleDeleteTask = (id) => {
+    const handleDeleteTask = (id: number) => {
         deleteTask(id)
             .then(() => {
                 const allTasks = [...tasks];
@@ -114,7 +136,7 @@ const TodoPage = () => {
             .catch(e => console.log('error deleting task', e));
     }
 
-    const handleUpdateTask = (id, data) => {
+    const handleUpdateTask = (id: number, data: any) => {
         updateTask(id, data)
             .then(data => {
                 const allTasks = [...tasks];

@@ -25,7 +25,7 @@ export const getAllTasks = async () => {
   return (await response.json()) as TaskResponse[];
 };
 
-export const getTasksByCategoryId = async (categoryId) => {
+export const getTasksByCategoryId = async (categoryId: number) => {
   const response = await fetch(baseURL + "/tasks/category" + `/${categoryId}`);
   if (!response.ok) {
     throw new Error("Failed to fetch");
@@ -47,7 +47,7 @@ export const createTask = async (data: TaskFormData) => {
   return (await response.json()) as TaskResponse;
 };
 
-export const deleteTask = async (id) => {
+export const deleteTask = async (id: number) => {
   const response = await fetch(baseURL + "/tasks" + `/${id}`, {
     method: "DELETE",
     headers: {
@@ -76,7 +76,7 @@ export const updateTask = async (id: number, data: Partial<TaskFormData>) => {
   return (await response.json()) as TaskResponse;
 };
 
-export const duplicateTask = async (id) => {
+export const duplicateTask = async (id : number) => {
   const response = await fetch(baseURL + "/tasks" + `/${id}/duplicate`, {
     method: "POST",
     headers: {
