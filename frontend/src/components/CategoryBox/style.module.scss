@@ -1,0 +1,43 @@
+
+.boxWrapper {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 15px;
+    gap: 8px;
+    width: 100%;
+    /* stroke/line_900 */
+    border-bottom: 1px solid #E0E0E0;
+    flex-shrink: 0;
+
+    &:hover {
+        background: #EBEBEB;
+    }
+
+}
+
+.categoryTitle {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    color: #1F1F1F;
+}
+
+.actionButtons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.selected {
+    background: #FFFFFF;
+
+    &:hover {
+        background: #fff;
+    }
+}

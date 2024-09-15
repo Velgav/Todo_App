@@ -1,0 +1,57 @@
+
+.boxWrapper {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    gap: 8px;
+    width: 100%;
+    height: 70px;
+    /* stroke/line_900 */
+    border-bottom: 1px solid #E0E0E0;
+    background: #fff;
+
+}
+
+.categoryTitle {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    color: #1F1F1F;
+}
+
+.actionButtons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.titleInput {
+    max-width: 150px;
+    border: none;
+    background: none;
+    padding: 10px 0 10px 5px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    color: #000;
+
+    &::placeholder {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+
+        color: rgba(31, 31, 31, 0.17);
+    }
+}

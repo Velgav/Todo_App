@@ -1,0 +1,49 @@
+
+
+.listContainer {
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    background: #F5F5F5;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    gap: 30px;
+    flex-shrink: 0;
+
+}
+
+.listHeader {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+
+}
+
+.listTitle {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+
+    color: #000000;
+    margin: 0;
+
+}
+
+.actionButton {
+    padding: 3px;
+    border-radius: 50%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        background: #fff;
+    }
+}

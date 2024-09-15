@@ -1,0 +1,103 @@
+.cardWrapper {
+    width: 100%;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    border: 1px solid #D9D9D9;
+}
+
+.cardHeader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.boxTitle {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+.cardBody {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.actionsContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.taskDescription {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+
+    color: #000000;
+}
+
+.selectCategory {
+    width: 200px;
+    height: 76px;
+    background: #FAFAFA;
+    outline: none;
+    border: none;
+    padding: 0 20px;
+    /* None */
+    position: relative;
+    display: inline-block;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+
+    color: #000000;
+    // appearance: none; /* Remove default arrow */
+    cursor: pointer;
+
+    &::after {
+       padding-right: 10px;
+    }
+
+}
+
+.taskInput {
+    width: 100%;
+    height: 120px;
+    background: #FAFAFA;
+    border: none;
+    padding: 8px;
+
+    /* Type your todo here */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    /* identical to box height */
+    color: #000;
+
+    &::placeholder {
+        color: rgba(0, 0, 0, 0.19);
+
+    }
+
+}
